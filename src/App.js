@@ -52,7 +52,7 @@ function App() {
         resetTurn()
       }else{
         
-        resetTurn()
+        setTimeout(()=>resetTurn(), 800)
       }
     }
 
@@ -78,7 +78,9 @@ function App() {
         <SingleCard 
         key={card.id} 
         card={card}
-        handleChoice={handleChoice}>
+        handleChoice={handleChoice}
+        flipped={card===choiceOne || card === choiceTwo || card.matched}
+        >
 
         </SingleCard>
 
